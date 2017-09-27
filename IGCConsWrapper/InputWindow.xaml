@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window
+	x:Class="IGCConsWrapper.InputWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	Height="130"
+	Width="350"
+	ResizeMode="NoResize"
+	WindowStyle="SingleBorderWindow"
+	Foreground="#FFFFFFFF"
+	Icon="..\ig48x48.ico"
+	Title="Создание usr-файла"
+	Background="#FF7E8BD0">
+	<Grid>
+		<DockPanel>
+			<TextBlock
+				Name="txt_prompt"
+				Text="Укажите папку, в которой нужно создать usr-файл:"
+				DockPanel.Dock="Top"
+				Margin="8,4"
+				HorizontalAlignment="Center" />
+			<DockPanel
+				DockPanel.Dock="Top">
+				<Button
+					Name="btn_browseFolder"
+					Content="Обзор"
+					Margin="8,4"
+					Width="80"
+					Height="25" />
+				<TextBox
+					Name="txt_usrFolder"
+					Margin="8,4"
+					Height="25" />
+			</DockPanel>
+			<StackPanel 
+				Orientation="Horizontal" 
+				HorizontalAlignment="Center">
+				<Button
+					Name="btn_OK"
+					Content="OK"
+					IsDefault="True"
+					Width="80"
+					Margin="8,4"
+					Height="25"
+					DockPanel.Dock="Bottom" />
+				<Button
+					Name="btn_Cancel"
+					Content="Отмена"
+					IsCancel="True"
+					Width="80"
+					Margin="8,4"
+					Height="25"
+					DockPanel.Dock="Bottom" />
+			</StackPanel>
+		</DockPanel>
+	</Grid>
+</Window>

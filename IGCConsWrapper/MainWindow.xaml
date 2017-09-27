@@ -1,0 +1,406 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window
+	x:Class="IGCConsWrapper.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	Title="Информ-Групп Помощник"
+	Height="480"
+	MinHeight="355"
+	Width="370"
+	MinWidth="370"
+	Background="#FF7E8BD0"
+	Foreground="#FF000000"
+	Icon="..\ig48x48.ico">
+	<Grid>
+		<DockPanel>
+			<DockPanel
+				DockPanel.Dock="Top">
+				<Menu
+					Name="menu_main"
+					DockPanel.Dock="Top">
+					<MenuItem
+						Header="_Комплект">
+						<MenuItem
+							Name="mi_browseConsFolder"
+							Header="_Найти К+" />
+						<MenuItem
+							Name="mi_start"
+							Header="_Запустить К+" />
+						<MenuItem
+							Name="mi_openFolder"
+							Header="_Открыть папку К+" />
+						<Separator />
+						<MenuItem
+							Name="mi_exit"
+							Header="_Выход" />
+					</MenuItem>
+					<MenuItem
+						Header="_Списки">
+						<MenuItem
+							Header="_Baselist">
+							<MenuItem
+								Name="mi_makeBSL"
+								Header="Создать"/>
+							<MenuItem
+								Name="mi_editBSL"
+								Header="Открыть"/>
+							<MenuItem
+								Name="mi_checkBSL"
+								Header="Проверить"/>
+						</MenuItem>
+						<MenuItem
+							Header="_Userlist">
+							<MenuItem
+								Name="mi_makeUSL"
+								Header="Создать"/>
+							<MenuItem
+								Name="mi_editUSL"
+								Header="Открыть"/>
+						</MenuItem>
+					</MenuItem>
+					<MenuItem
+						Header="_Регистрация">
+						<MenuItem
+							Header="_Зарегистрировать"/>
+						<MenuItem
+							Header="_Сформировать словари" />
+					</MenuItem>
+					<MenuItem
+						Header="_Пополнение">
+						<MenuItem
+							Header="_Сформировать запросы в SEND"/>
+						<MenuItem
+							Header="_Сформировать запросы в другой папке" />
+						<Separator/>
+						<MenuItem
+							Header="_Создать user-файл в RECEIVE" />
+						<MenuItem
+							Header="_Создать user-файл в другой папке" />
+						<Separator/>
+						<MenuItem
+							Header="Создать popolnenie_ip.bat"/>
+						<MenuItem
+							Header="Создать задачу в планировщике"/>
+						<Separator/>
+						<MenuItem
+							Header="Проверить статистику"/>
+					</MenuItem>
+					<MenuItem
+						Header="_Помощь">
+						<MenuItem
+							Header="_Создать ярлык на рабочем столе"/>
+						<MenuItem
+							Header="_Переиндексировать базу" />
+						<MenuItem
+							Header="_Создать start.key"/>
+						<MenuItem
+							Header="_Показать имя текущего пользователя" />
+					</MenuItem>
+				</Menu>
+				<ToolBarTray
+					Name="toolBar"
+					DockPanel.Dock="Top"
+					Background="#FF7E8BD0">
+					<ToolBar
+						Background="#FFFFA500">
+						<Button
+							Name="btn_start"
+							ToolTip="Запустить СПС Консультант Плюс">
+							<TextBlock
+								Margin="3,0,0,0"
+								Background="{x:Null}">Запустить К+</TextBlock>
+						</Button>
+						<Button
+							Name="btn_openFolder"
+							ToolTip="Открыть папку, в которой установлена СПС Консультант Плюс">
+							<TextBlock
+								Margin="3,0,0,0">Открыть папку К+</TextBlock>
+						</Button>
+						<Button
+							Name="btn_makeLink"
+							ToolTip="Вывести на рабочий стол и в меню Пуск ярлык Консультант Плюс">
+							<TextBlock
+								Margin="3,0,0,0">Создать ярлык К+</TextBlock>
+						</Button>
+						<Separator />
+						<Button
+							Name="btn_reg"
+							ToolTip="Зарегистрировать системы">
+							<TextBlock
+								Margin="3,0,0,0">Регистрация</TextBlock>
+						</Button>
+						<Separator />
+						<Button
+							Name="btn_reindex0"
+							ToolTip="Сформировать объединенные словари">
+							<TextBlock
+								Margin="3,0,0,0">Формирование словарей</TextBlock>
+						</Button>
+						<Button
+							Name="btn_reindex"
+							ToolTip="Переиндексировать выбранную базу">
+							<TextBlock
+								Margin="3,0,0,0">Переиндексировать базу</TextBlock>
+						</Button>
+						<Button
+							Name="btn_quest"
+							ToolTip="Сформировать файлы для получения пополнения">
+							<TextBlock
+								Margin="3,0,0,0">Формирование запросов в send</TextBlock>
+						</Button>
+						<Button
+							Name="btn_questInFolder"
+							ToolTip="Сформировать файлы для получения пополнения">
+							<TextBlock
+								Margin="3,0,0,0">Формирование запросов в другой папке</TextBlock>
+						</Button>
+						<Separator />
+						<Button
+							Name="btn_makeBSL"
+							ToolTip="Создать файл BASELIST.CFG в папке BASE корневой папки Консультант Плюс">
+							<TextBlock
+								Margin="3,0,0,0">Создать baselist</TextBlock>
+						</Button>
+						<Button
+							Name="btn_editBSL">
+							<TextBlock
+								Margin="3,0,0,0">Редактировать baselist</TextBlock>
+						</Button>
+						<Button
+							Name="btn_checkBSL"
+							ToolTip="Проверить список баз в BASELIST.CFG на соответствие дистрибутивам в DISTR/DIN">
+							<TextBlock
+								Margin="3,0,0,0">Проверить baselist</TextBlock>
+						</Button>
+						<Separator />
+						<Button
+							Name="btn_makeUSL">
+							<TextBlock
+								Margin="3,0,0,0">Создать userlist</TextBlock>
+						</Button>
+						<Button
+							Name="btn_editUSL">
+							<TextBlock
+								Margin="3,0,0,0">Редактировать userlist</TextBlock>
+						</Button>
+						<Separator />
+						<Button
+							Name="btn_usr">
+							<TextBlock
+								Margin="3,0,0,0">Создать user-файл в receive</TextBlock>
+						</Button>
+						<Button
+							Name="btn_usrInFolder">
+							<TextBlock
+								Margin="3,0,0,0">Создать user-файл в другой папке</TextBlock>
+						</Button>
+						<Separator />
+						<Button
+							Name="btn_makePopBat"
+							ToolTip="Создать файл для запуска интернет-пополнения в корневой папке Консультант Плюс">
+							<TextBlock
+								Margin="3,0,0,0">Создать popolnenie_ip.bat</TextBlock>
+						</Button>
+						<Button
+							Name="btn_makeTask"
+							ToolTip="Создать задание в планировщике заданий для автоматического пополнения через интернет">
+							<TextBlock
+								Margin="3,0,0,0">Создать задачу в планировщике</TextBlock>
+						</Button>
+						<Separator />
+						<Button
+							Name="btn_checkStat"
+							ToolTip="Проверить даты последних пополнений баз">
+							<TextBlock
+								Margin="3,0,0,0">Проверить статистику</TextBlock>
+						</Button>
+						<Button
+							Name="btn_makeStartKey"
+							ToolTip="Создать в корневой папке Консультант Плюс файл для запуска СПС с ключами">
+							<TextBlock
+								Margin="3,0,0,0">Создать start.key</TextBlock>
+						</Button>
+						<Button
+							Name="btn_username">
+							<TextBlock
+								Margin="3,0,0,0">Показать сетевое имя пользователя</TextBlock>
+						</Button>
+					</ToolBar>
+				</ToolBarTray>
+			</DockPanel>
+			<DockPanel
+				DockPanel.Dock="Bottom">
+				<GroupBox
+					Name="gb_popSource"
+					Header="Источник пополнения"
+					DockPanel.Dock="Top"
+					Foreground="White"
+					Margin="8,3">
+					<DockPanel>
+						<StackPanel
+							Orientation="Horizontal"
+							DockPanel.Dock="Top"
+							Margin="5,0">
+							<RadioButton
+								Name="rbtn_int">
+								<Label
+									Content="Интернет"
+									Foreground="White" />
+							</RadioButton>
+							<RadioButton
+								Name="rbtn_rec">
+								<Label
+									Content="Папка RECEIVE"
+									Foreground="White" />
+							</RadioButton>
+							<RadioButton
+								Name="rbtn_other">
+								<Label
+									Content="Другая папка"
+									Foreground="White" />
+							</RadioButton>
+						</StackPanel>
+						<DockPanel
+							LastChildFill="True">
+							<StackPanel
+								DockPanel.Dock="Bottom"
+								Orientation="Horizontal"
+								HorizontalAlignment="Center">
+								<Button
+									Name="btn_copyPop"
+									Content="Скопировать пополнение"
+									MaxHeight="40"
+									DockPanel.Dock="Top"
+									Margin="5"
+									Padding="5" />
+								<Button
+									Name="btn_copyBase"
+									Content="Скопировать базы"
+									MaxHeight="40"
+									DockPanel.Dock="Top"
+									Margin="5"
+									Padding="5" />
+							</StackPanel>
+							<DockPanel
+								DockPanel.Dock="Top"
+								LastChildFill="True">
+								<Button
+									Name="btn_browsePopSource"
+									Content="Обзор"
+									Margin="5,3"
+									Width="80" />
+								<TextBox
+									Name="txt_popSource"
+									Margin="5,3"
+									IsReadOnly="True" />
+							</DockPanel>
+						</DockPanel>
+					</DockPanel>
+				</GroupBox>
+				<DockPanel
+					Name="pnl_popbtns"
+					DockPanel.Dock="Top"
+					HorizontalAlignment="Center"
+					VerticalAlignment="Bottom">
+					<Button
+						Name="btn_doPop"
+						Content="Пополнить Консультант Плюс"
+						MaxHeight="40"
+						HorizontalAlignment="Center"
+						Margin="5"
+						Padding="5" />
+				</DockPanel>
+				<DockPanel
+					Name="pnl_statusBar"
+					DockPanel.Dock="Top"
+					VerticalAlignment="Bottom"
+					HorizontalAlignment="Stretch"
+					Background="#FFF0F0F0"
+					Height="30">
+					<ProgressBar
+						Name="pb_status"
+						HorizontalAlignment="Right"
+						DockPanel.Dock="Right"
+						Margin="4"
+						Width="150"
+						Visibility="Collapsed"/>
+					<TextBlock
+						Name="txt_status"
+						VerticalAlignment="Center"
+						DockPanel.Dock="Left"
+						Margin="10,0,4,0"></TextBlock>
+				</DockPanel>
+			</DockPanel>
+			<DockPanel
+				DockPanel.Dock="Top"
+				LastChildFill="True">
+				<GroupBox
+					Header="Путь к файлу cons.exe в папке Консультант Плюс"
+					DockPanel.Dock="Top"
+					Foreground="White"
+					Margin="8,3">
+					<DockPanel
+						LastChildFill="True">
+						<Button
+							Name="btn_browseConsFolder"
+							Content="Обзор"
+							Margin="5"
+							Width="80" />
+						<Button
+							Name="btn_refreshFolder"
+							Content="Обновить"
+							Margin="5"
+							Width="80" 
+							DockPanel.Dock="Right"/>
+						<TextBox
+							Name="txt_consFolder"
+							Margin="5"
+							IsReadOnly="True" />
+					</DockPanel>
+				</GroupBox>
+				<GroupBox
+					Name="gb_found"
+					Header="Найдено"
+					Foreground="White"
+					DockPanel.Dock="Top"
+					HorizontalAlignment="Stretch"
+					Margin="8,3">
+					<DockPanel
+						LastChildFill="True">
+						<StackPanel
+							Orientation="Horizontal"
+							DockPanel.Dock="Top"
+							Margin="5,0">
+							<RadioButton
+								Name="rbtn_base">
+								<Label
+									Content="Базы"
+									Foreground="White" />
+							</RadioButton>
+							<RadioButton
+								Name="rbtn_system">
+								<Label
+									Content="Системы"
+									Foreground="White" />
+							</RadioButton>
+							<CheckBox
+								Name="cb_selectAll"
+								Content="Выбрать все"
+								Foreground="White"
+							Margin="5"/>
+						</StackPanel>
+						<TextBlock
+							Name="tb_foundCount"
+							Text=""
+							Margin="5,3"
+							DockPanel.Dock="Bottom"/>
+						<ListBox
+							Name="lb_list"
+							DockPanel.Dock="Top"
+							Margin="5,3"
+							SelectionMode="Extended"
+							SelectedIndex="0"/>
+					</DockPanel>
+				</GroupBox>
+			</DockPanel>
+		</DockPanel>
+	</Grid>
+</Window>

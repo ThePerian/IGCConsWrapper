@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window
+	x:Class="IGCConsWrapper.ProcessWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	Height="240"
+	Width="400"
+	ResizeMode="NoResize"
+	WindowStyle="SingleBorderWindow"
+	Background="#FF7E8BD0"
+	Foreground="#FFFFFFFF"
+	Icon="..\ig48x48.ico"
+	Title="Копирование">
+	<Grid>
+		<DockPanel>
+			<TextBlock
+				Name="txt_from"
+				Text="From"
+				DockPanel.Dock="Top"
+				Margin="8,4" />
+			<TextBlock
+				Name="txt_to"
+				Text="To"
+				DockPanel.Dock="Top"
+				Margin="8,4" />
+			<ProgressBar
+				Name="progressBar"
+				Minimum="0"
+				Maximum="100"
+				DockPanel.Dock="Top"
+				Height="30"
+				Margin="8,4" />
+			<TextBlock
+				Name="txt_filesLeft"
+				Text="Files left"
+				DockPanel.Dock="Top"
+				Margin="8,4" />
+			<TextBlock
+				Name="txt_timeLeft"
+				Text="Time left"
+				DockPanel.Dock="Top"
+				Margin="8,4" />
+			<TextBlock
+				Name="txt_timeSinceStart"
+				Text="Time since start"
+				DockPanel.Dock="Top"
+				Margin="8,4" />
+			<Button
+				Name="btn_Cancel"
+				Content="Отмена"
+				Width="70"
+				Height="30"
+				Margin="8"
+				HorizontalAlignment="Right"/>
+		</DockPanel>
+	</Grid>
+</Window>
